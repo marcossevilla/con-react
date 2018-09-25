@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody } from 'reactstrap';
+import { Card, CardImg, CardTitle, CardText, CardBody } from 'reactstrap';
 
 class Dishdetail extends Component {
 
@@ -8,7 +8,7 @@ class Dishdetail extends Component {
             return(
                 <div className="col-12 col-md-5 m-1">
                 <Card >
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
@@ -32,8 +32,10 @@ class Dishdetail extends Component {
                 return(
                     <ul className='list-unstyled'>
                         <li key={comment.id}>
-                            <p>{comment.comment}</p>
-                            <p>-- {comment.author} , &nbsp;{comment.date} </p>
+                            <p> {comment.comment} </p>
+                            <p>-- {comment.author} , 
+                                &nbsp; {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                            </p>
                         </li>
                     </ul>   
                 );
@@ -55,9 +57,11 @@ class Dishdetail extends Component {
         
     render() {
         return ( 
-            <div className="row">
-                {this.renderDish(this.props.dish)}
-                {this.renderComment(this.props.dish)}
+            <div class="container">
+                <div className="row">
+                    {this.renderDish(this.props.dish)}
+                    {this.renderComment(this.props.dish)}
+                </div>
             </div>
         );
     }    
