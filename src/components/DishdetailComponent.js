@@ -47,7 +47,9 @@ import { Card, CardImg, CardTitle, CardText, CardBody } from 'reactstrap';
             )
         }
         else {
-            <div></div>
+            return (
+                <div></div>
+            );
         }
     }
         
