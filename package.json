@@ -14,17 +14,20 @@
     "react-redux-form": "1.16.8",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.1.5",
+    "react-transition-group": "2.3.0",
     "reactstrap": "5.0.0",
     "redux": "3.7.2",
     "redux-logger": "3.0.6",
     "redux-thunk": "2.2.0"
   },
   "scripts": {
-    "lint": "eslint",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npm run lint:node && npm run lint:browser",
+    "lint:node": "eslint --config=./.eslintrc *.js scripts/*.js",
+    "lint:browser": "eslint --config=./src/.eslintrc src/**/**/*.js"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",

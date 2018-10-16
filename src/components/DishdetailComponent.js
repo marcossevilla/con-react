@@ -18,7 +18,7 @@ class CommentForm extends Component {
         this.state = {
             isModalOpen: false
         };
-
+        
         this.toggleModal = this.toggleModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
